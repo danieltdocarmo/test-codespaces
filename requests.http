@@ -1,0 +1,13 @@
+### Primeira requisição
+POST localhost:8080/person HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Daniel",
+  "age": 30
+}
+
+###
+### Segunda requisição
+GET localhost:8080/person/Daniel HTTP/1.1
+

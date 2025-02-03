@@ -1,21 +1,11 @@
 package com.codespace.codespace.repository;
 
 import com.codespace.codespace.entity.Person;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class PersonDAO {
+public interface PersonDAO extends JpaRepository<Person, Integer> {
 
-    @PersistenceContext
-    private EntityManager entityManager;
-
-    public void save(Person person) {
-        entityManager.persist(person);
-    }
-
-    public Person findByName(String name) {
-        return entityManager.find(Person.class, name);
-    }
+    Person findByName(String name);
 }
